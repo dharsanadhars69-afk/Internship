@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .navbar {
+            background: #131921;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            gap: 20px;
+        }
+        
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .search-box {
+            flex: 1;
+            display: flex;
+        }
+        
+        .search-box input {
+            flex: 1;
+            padding: 8px;
+            border: none;
+        }
+        
+        .search-box button {
+            background: #febd69;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+        
+        .nav-item {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        
+        .nav-item:hover {
+            border: 1px solid white;
+        }
+        
+        /* Mobile */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-wrap: wrap;
+            }
+            .search-box {
+                order: 3;
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">amazon</div>
+        
+        <div class="search-box">
+            <input type="text" placeholder="Search Amazon">
+            <button>Search</button>
+        </div>
+        
+        <div class="nav-item">Sign In</div>
+        <div class="nav-item">Cart (0)</div>
+    </div>
+</body>
+</html>

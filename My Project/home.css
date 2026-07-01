@@ -1,0 +1,351 @@
+/* ===================================
+   Fitness Challenge Community
+   home.css - Part 1
+=================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+    color:#333;
+    line-height:1.6;
+}
+
+/* ========== NAVBAR ========== */
+
+.navbar{
+    background:#15803d;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 8%;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.logo i{
+    font-size:30px;
+}
+
+.navbar ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+.navbar ul li a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.navbar ul li a:hover{
+    color:#d1fae5;
+}
+
+.logout-btn{
+    background:white;
+    color:#15803d;
+    border:none;
+    padding:10px 18px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.logout-btn:hover{
+    background:#dcfce7;
+}
+
+/* ========== HERO ========== */
+
+.hero{
+    background:linear-gradient(135deg,#16a34a,#22c55e);
+    color:white;
+    text-align:center;
+    padding:80px 20px;
+}
+
+.hero h1{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+    font-size:18px;
+}
+
+.join-btn{
+    margin-top:30px;
+    background:white;
+    color:#15803d;
+    border:none;
+    padding:14px 30px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.join-btn:hover{
+    transform:translateY(-3px);
+}
+
+/* ========== DASHBOARD ========== */
+
+.dashboard{
+    padding:60px 8%;
+}
+
+.dashboard h2{
+    text-align:center;
+    margin-bottom:35px;
+    color:#15803d;
+}
+
+.card-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    text-align:center;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card i{
+    font-size:35px;
+    color:#16a34a;
+    margin-bottom:15px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card h1{
+    color:#15803d;
+    margin-top:10px;
+}
+
+/* ===================================
+   home.css - Part 2
+=================================== */
+
+/* ===== Dashboard Sections ===== */
+
+.dashboard-section{
+    padding:60px 8%;
+}
+
+.dashboard-section h2{
+    text-align:center;
+    color:#15803d;
+    margin-bottom:35px;
+}
+
+/* ===== Action Buttons ===== */
+
+.action-btn{
+    margin-top:15px;
+    padding:12px 20px;
+    border:none;
+    border-radius:8px;
+    background:#16a34a;
+    color:white;
+    cursor:pointer;
+    font-size:15px;
+    transition:0.3s;
+}
+
+.action-btn:hover{
+    background:#15803d;
+    transform:scale(1.05);
+}
+
+/* ===== Progress Card ===== */
+
+.progress-card{
+    background:white;
+    max-width:600px;
+    margin:auto;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+.progress-card p{
+    margin:15px 0;
+    font-weight:bold;
+}
+
+progress{
+    width:100%;
+    height:22px;
+}
+
+/* ===== Leaderboard ===== */
+
+.leaderboard{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.leaderboard th{
+    background:#15803d;
+    color:white;
+    padding:15px;
+}
+
+.leaderboard td{
+    padding:15px;
+    border-bottom:1px solid #ddd;
+    text-align:center;
+}
+
+.leaderboard tr:hover{
+    background:#f0fdf4;
+}
+
+/* ===== Progress Photos ===== */
+
+.progress-image{
+    height: 220px;
+    width: 220px;
+    object-fit: contain;
+    border-radius: 10px;
+    display:block;
+    margin: 0 auto;
+}
+
+.photos{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.photo-box{
+    width:260px;
+    background:white;
+    padding:15px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ===== Contact Card ===== */
+
+.card p{
+    margin:10px 0;
+}
+
+/* ===== Footer ===== */
+
+footer{
+    background:#15803d;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+/* ===== Dark Mode ===== */
+
+.dark-mode{
+    background:#111827;
+    color:white;
+}
+
+.dark-mode .card,
+.dark-mode .progress-card,
+.dark-mode .leaderboard{
+    background:#1f2937;
+    color:white;
+}
+
+.dark-mode .leaderboard th{
+    background:#14532d;
+}
+
+.dark-mode .leaderboard td{
+    border-color:#374151;
+}
+
+.dark-mode footer{
+    background:#14532d;
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width:768px){
+
+.navbar{
+    flex-direction:column;
+    gap:15px;
+}
+
+.navbar ul{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.hero h1{
+    font-size:30px;
+}
+
+.hero p{
+    font-size:16px;
+}
+
+.card-container{
+    grid-template-columns:1fr;
+}
+
+.logout-btn{
+    width:100%;
+}
+
+.join-btn{
+    width:100%;
+}
+
+.action-btn{
+    width:100%;
+}
+
+
+}

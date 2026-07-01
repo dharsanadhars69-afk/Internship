@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fruit Store</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+}
+
+h1{
+    text-align: center;
+    color: green;
+}
+
+.container{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card{
+    text-align: center;
+    padding: 10px;
+    border: 1px solid lightgray;
+    transition: 0.3s;
+}
+
+.card:hover{
+    transform: scale(1.05);
+}
+
+button{
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>Fruit Store</h1>
+
+<div class="container">
+    <div class="card">
+        <h3>Apple</h3>
+        <p>₹120</p>
+        <button>Buy Now</button>
+        
+    </div>
+    
+
+    <div class="card">
+        <h3>Banana</h3>
+        <p>₹60</p>
+        <button>Buy Now</button>
+    </div>
+    
+
+    <div class="card">
+        
+        <h3>Orange</h3>
+        <p>₹80</p>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <h3>Mango</h3>
+        <p>₹150</p>
+        <button>Buy Now</button>
+        
+    </div>
+
+</div>
+
+</body>
+</html>

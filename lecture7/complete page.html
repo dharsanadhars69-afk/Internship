@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Landing Page</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgb(7, 7, 48);
+    padding:15px 30px;
+}
+
+.logo{
+    color:white;
+    font-size:24px;
+    font-weight:bold;
+}
+
+
+nav > a{
+    color:white;
+    text-decoration:none;
+    margin-left:15px;
+}
+
+nav > a:hover{
+    color:rgb(201, 201, 12);
+}
+
+
+.hero{
+    text-align:center;
+    padding:80px 20px;
+    background:lightblue;
+}
+
+.hero h1{
+    margin-bottom:15px;
+}
+
+.hero button{
+    padding:10px 20px;
+    border:none;
+    background:rgb(8, 8, 43);
+    color:white;
+    cursor:pointer;
+}
+
+.hero button:hover{
+    background:black;
+}
+
+
+.features{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    padding:40px;
+}
+
+.feature{
+    border:1px solid gray;
+    padding:20px;
+    width:200px;
+    text-align:center;
+}
+
+.feature:hover{
+    transform:scale(1.05);
+}
+
+
+.feature:first-child{
+    background-color:lightyellow;
+}
+
+
+footer{
+    text-align:center;
+    background:rgb(4, 4, 37);
+    color:white;
+    padding:15px;
+}
+
+
+@media(max-width:600px){
+
+    nav{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .features{
+        flex-direction:column;
+        align-items:center;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">My Website</div>
+
+    <div>
+        
+       <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    
+    </div>
+
+</nav>
+
+<section class="hero">
+    <h1>Welcome to My Website</h1>
+    <p>Simple and Responsive Landing Page</p>
+    <br>
+    <button>Get Started</button>
+</section>
+
+<section class="features">
+
+    <div class="feature">
+        <h3>Fast</h3>
+        <p>Quick Performance</p>
+    </div>
+
+    <div class="feature">
+        <h3>Easy</h3>
+        <p>User Friendly</p>
+    </div>
+
+    <div class="feature">
+        <h3>Secure</h3>
+        <p>Safe and Reliable</p>
+    </div>
+
+</section>
+
+<footer>
+    © 2026 My Website
+</footer>
+
+</body>
+</html>

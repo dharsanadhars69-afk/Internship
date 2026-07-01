@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Clone</title>
+    <link rel="stylesheet" href="style.css">
+
+<style>
+
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1600&q=80") no-repeat center center/cover;
+    height:100vh;
+}
+
+.overlay{
+    background:rgba(0,0,0,0.7);
+    height:100%;
+    width:100%;
+}
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+}
+
+.logo{
+    width:150px;
+}
+
+header button{
+    background:#e50914;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.content{
+    text-align:center;
+    color:white;
+    margin-top:150px;
+}
+
+.content h1{
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.content h2{
+    font-size:28px;
+    margin-bottom:20px;
+    font-weight:normal;
+}
+
+.content p{
+    font-size:20px;
+    margin-bottom:30px;
+}
+
+.email-box{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.email-box input{
+    width:350px;
+    padding:15px;
+    font-size:18px;
+    border:none;
+    border-radius:5px;
+}
+
+.email-box button{
+    background:#e50914;
+    color:white;
+    border:none;
+    padding:15px 25px;
+    font-size:20px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+header button:hover,
+.email-box button:hover{
+    background:#c11119;
+}
+
+@media(max-width:768px){
+
+header{
+    padding:20px;
+}
+
+.logo{
+    width:120px;
+}
+
+.content{
+    margin-top:100px;
+    padding:20px;
+}
+
+.content h1{
+    font-size:35px;
+}
+
+.content h2{
+    font-size:22px;
+}
+
+.email-box input{
+    width:100%;
+}
+
+.email-box button{
+    width:100%;
+}
+}
+</style>
+</head>
+<body>
+
+<div class="overlay">
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" class="logo" alt="Netflix">
+        <button>Sign In</button>
+    </header>
+
+    <div class="content">
+        <h1>Unlimited movies, TV shows and more.</h1>
+        <h2>Watch anywhere. Cancel anytime.</h2>
+        <p>Ready to watch? Enter your email to create or restart your membership.</p>
+
+        <div class="email-box">
+            <input type="email" placeholder="Email address">
+            <button>Get Started ></button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

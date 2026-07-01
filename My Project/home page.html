@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fitness Challenge Community</title>
+
+<link rel="stylesheet" href="home.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        <i class="fas fa-dumbbell"></i>
+        <span>FitChallenge</span>
+    </div>
+
+    <ul>
+
+        <li><a href="#">Home</a></li>
+        <li><a href="#workout">Workouts</a></li>
+        <li><a href="#leaderboard">Leaderboard</a></li>
+        <li><a href="#nutrition">Nutrition</a></li>
+        <li><a href="#contact">Contact</a></li>
+
+    </ul>
+
+    <button class="logout-btn" onclick="logout()">
+        Logout
+    </button>
+
+</nav>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1 id="welcomeUser">
+            Welcome to Fitness Challenge Community
+        </h1>
+
+        <p>
+
+            Build healthy habits, track workouts,
+            earn challenge points and stay motivated
+            every single day.
+
+        </p>
+
+        <button class="join-btn"
+        onclick="joinChallenge()">
+
+            Join Challenge
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ================= DASHBOARD ================= -->
+
+<section class="dashboard">
+
+<h2>Dashboard Overview</h2>
+
+<div class="card-container">
+
+<div class="card">
+
+<i class="fas fa-fire"></i>
+
+<h3>Workout Streak</h3>
+
+<h1>21 Days</h1>
+
+</div>
+
+<div class="card">
+
+<i class="fas fa-dumbbell"></i>
+
+<h3>Total Workouts</h3>
+
+<h1>
+<span id="workout">0</span>
+</h1>
+
+</div>
+
+<div class="card">
+
+<i class="fas fa-trophy"></i>
+
+<h3>Challenge Points</h3>
+
+<h1>
+
+<span id="points">0</span>
+
+</h1>
+
+</div>
+
+<div class="card">
+
+<i class="fas fa-heart"></i>
+
+<h3>Calories Burned</h3>
+
+<h1>3250</h1>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= WORKOUT TRACKER ================= -->
+
+<section class="dashboard-section" id="workout">
+
+    <h2>Workout Tracker</h2>
+
+    <div class="card-container">
+
+        <div class="card">
+
+            <h3>Today's Workout</h3>
+
+            <p>Complete your daily workout to increase your streak.</p>
+
+            <button class="action-btn" onclick="completeWorkout()">
+                Complete Workout
+            </button>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Water Intake</h3>
+
+            <h1><span id="water">0</span> Glasses</h1>
+
+            <button class="action-btn" onclick="drinkWater()">
+                Drink Water
+            </button>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Daily Steps</h3>
+
+            <h1><span id="steps">0</span></h1>
+
+            <button class="action-btn" onclick="addSteps()">
+                Add 1000 Steps
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= CHALLENGE PROGRESS ================= -->
+
+<section class="dashboard-section">
+
+    <h2>Your Challenge Progress</h2>
+
+    <div class="progress-card">
+
+        <p>Challenge Completion</p>
+
+        <progress id="progressBar" value="0" max="100"></progress>
+
+        <p>
+            <span id="progressText">0%</span> Completed
+        </p>
+
+        <button class="action-btn" onclick="increaseProgress()">
+            Update Progress
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ================= QUICK ACTIONS ================= -->
+
+<section class="dashboard-section">
+
+    <h2>Quick Actions</h2>
+
+    <div class="card-container">
+
+        <div class="card">
+
+            <i class="fas fa-trophy fa-2x"></i>
+
+            <h3>Earn Points</h3>
+
+            <button class="action-btn" onclick="earnPoints()">
+                +10 Points
+            </button>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fas fa-moon fa-2x"></i>
+
+            <h3>Dark Mode</h3>
+
+            <button class="action-btn" onclick="darkMode()">
+                Toggle Theme
+            </button>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fas fa-right-from-bracket fa-2x"></i>
+
+            <h3>Logout</h3>
+
+            <button class="action-btn" onclick="logout()">
+                Logout
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= LEADERBOARD ================= -->
+
+<section class="dashboard-section" id="leaderboard">
+
+    <h2>Leaderboard</h2>
+
+    <table class="leaderboard">
+
+        <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Points</th>
+        </tr>
+
+        <tr>
+            <td>1</td>
+            <td>Arun</td>
+            <td>1200</td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>Priya</td>
+            <td>1100</td>
+        </tr>
+
+        <tr>
+            <td>3</td>
+            <td>Rahul</td>
+            <td>980</td>
+        </tr>
+
+        <tr>
+            <td>4</td>
+            <td>Sneha</td>
+            <td>910</td>
+        </tr>
+
+    </table>
+
+</section>
+
+<!-- ================= PROGRESS PHOTOS ================= -->
+
+<section class="dashboard-section">
+
+    <h2>Progress Photos</h2>
+
+    <div class="card-container">
+
+        <div class="card">
+
+            <img src="image11.jpg" alt="Before" class="progress-image">
+
+            <h3>Before Challenge</h3>
+
+        </div>
+
+        <div class="card">
+
+            <img src="image22.jpg" alt="After" class="progress-image">
+
+            <h3>After Challenge</h3>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= NUTRITION ================= -->
+
+<section class="dashboard-section" id="nutrition">
+
+    <h2>Nutrition Tracker</h2>
+
+    <div class="card-container">
+
+        <div class="card">
+            <h3>Calories</h3>
+            <p>2200 kcal</p>
+        </div>
+
+        <div class="card">
+            <h3>Protein</h3>
+            <p>140 g</p>
+        </div>
+
+        <div class="card">
+            <h3>Carbohydrates</h3>
+            <p>260 g</p>
+        </div>
+
+        <div class="card">
+            <h3>Water Goal</h3>
+            <p>8 Glasses</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= TRAINERS ================= -->
+
+<section class="dashboard-section">
+
+    <h2>Trainer Programs</h2>
+
+    <div class="card-container">
+
+        <div class="card">
+
+            <h3>Weight Loss</h3>
+
+            <p>8 Week Beginner Program</p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Muscle Building</h3>
+
+            <p>12 Week Strength Program</p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Cardio Fitness</h3>
+
+            <p>Improve Endurance & Heart Health</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+
+<section class="dashboard-section" id="contact">
+
+    <h2>Contact Us</h2>
+
+    <div class="card">
+
+        <p><strong>Email:</strong> fitchallenge@email.com</p>
+
+        <p><strong>Phone:</strong> +91 98765 43210</p>
+
+        <p><strong>Location:</strong> Coimbatore, Tamil Nadu</p>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+
+        © 2026 Fitness Challenge Community
+
+    </p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
