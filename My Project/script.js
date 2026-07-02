@@ -1,139 +1,142 @@
-// ===============================
-// Fitness Challenge Community
+// ----------------------------
+// FITNESS CHALLENGE COMMUNITY
 // script.js
-// ===============================
+// ----------------------------
 
-// ---------- LOGIN ----------
-function login() {
+// Workout Counter
+let workoutCount = localStorage.getItem("workoutCount");
 
-    let email = document.getElementById("email").value.trim();
-    let password = document.getElementById("password").value.trim();
-
-    if (email === "" || password === "") {
-        alert("Please enter Email and Password.");
-        return;
-    }
-
-    localStorage.setItem("user", email);
-
-    alert("Login Successful!");
-
-    window.location.href = "home.html";
+if (workoutCount === null) {
+    workoutCount = 0;
+} else {
+    workoutCount = parseInt(workoutCount);
 }
 
-// ---------- SHOW / HIDE PASSWORD ----------
-function togglePassword() {
-
-    let pass = document.getElementById("password");
-
-    if (pass.type === "password") {
-        pass.type = "text";
-    } else {
-        pass.type = "password";
-    }
-}
-
-// ---------- WELCOME USER ----------
+// Show workout count when Home page opens
 window.onload = function () {
 
-    let user = localStorage.getItem("user");
+    let workout = document.getElementById("workout");
 
-    if (document.getElementById("welcomeUser")) {
-
-        if (user) {
-            document.getElementById("welcomeUser").innerHTML =
-                "Welcome, " + user;
-        }
-
+    if (workout) {
+        workout.innerHTML = workoutCount;
     }
 
+    // Show motivational quote if available
+    let quote = document.getElementById("quote");
+
+    if (quote) {
+
+        let quotes = [
+            "Stay Strong 💪",
+            "Never Give Up 🔥",
+            "Small Steps Every Day 🏃",
+            "Fitness is a Lifestyle ❤️",
+            "Push Yourself 🚴"
+        ];
+
+        let random = Math.floor(Math.random() * quotes.length);
+
+        quote.innerHTML = quotes[random];
+    }
 };
 
-// ---------- JOIN CHALLENGE ----------
-function joinChallenge() {
-
-    alert("Congratulations!\nYou have joined the Fitness Challenge.");
-
-}
-
-// ---------- WORKOUT COUNTER ----------
-let workout = 0;
-
-function completeWorkout() {
-
-    workout++;
-
-    document.getElementById("workout").innerHTML = workout;
-
-}
-
-// ---------- WATER TRACKER ----------
+// Water Intake Counter
 let water = 0;
 
 function drinkWater() {
-
     water++;
-
-    document.getElementById("water").innerHTML = water;
-
+    document.getElementById("waterCount").innerHTML = water + " Glasses";
 }
 
-// ---------- STEP COUNTER ----------
 let steps = 0;
 
 function addSteps() {
-
     steps += 1000;
-
-    document.getElementById("steps").innerHTML = steps;
-
+    document.getElementById("stepCount").innerHTML = steps;
 }
 
-// ---------- CHALLENGE POINTS ----------
-let points = 0;
-
-function earnPoints() {
-
-    points += 10;
-
-    document.getElementById("points").innerHTML = points;
-
-}
-
-// ---------- PROGRESS BAR ----------
+// Challenge Progress
 let progress = 0;
 
-function increaseProgress() {
+function updateProgress() {
 
     if (progress < 100) {
-
         progress += 10;
-
-        document.getElementById("progressBar").value = progress;
-
-        document.getElementById("progressText").innerHTML =
-            progress + "%";
-
     }
 
+    document.getElementById("progressBar").value = progress;
+    document.getElementById("progressText").innerHTML = progress + "% Completed";
+
+    if (progress == 100) {
+        alert("🎉 Congratulations! Challenge Completed!");
+    }
 }
 
-// ---------- DARK MODE ----------
-function darkMode() {
 
-    document.body.classList.toggle("dark-mode");
+// ----------------------------
+// LOGIN
+// ----------------------------
 
+function login() {
+
+    let email = document.getElementById("email");
+    let password = document.getElementById("password");
+
+    if (!email || !password) return;
+
+    if (email.value == "" || password.value == "") {
+
+        alert("Please enter Email and Password");
+
+        return false;
+    }
+
+    alert("Login Successful!");
+
+    window.location.href = "home page.html";
+
+    return false;
 }
 
-// ---------- LOGOUT ----------
+
+// ----------------------------
+// JOIN CHALLENGE
+// ----------------------------
+
+function joinChallenge() {
+
+    alert("Congratulations! You joined the Fitness Challenge.");
+}
+
+
+// ----------------------------
+// COMPLETE WORKOUT
+// ----------------------------
+
+function completeWorkout() {
+
+    workoutCount++;
+
+    localStorage.setItem("workoutCount", workoutCount);
+
+    document.getElementById("workout").innerHTML = workoutCount;
+
+    alert("Workout Completed Successfully!");
+}
+
+
+// ----------------------------
+// LOGOUT
+// ----------------------------
+
 function logout() {
 
-    if (confirm("Do you want to Logout?")) {
+    let answer = confirm("Do you want to logout?");
 
-        localStorage.removeItem("user");
+    if (answer) {
+
+        alert("Logged Out Successfully");
 
         window.location.href = "index.html";
-
     }
-
 }
