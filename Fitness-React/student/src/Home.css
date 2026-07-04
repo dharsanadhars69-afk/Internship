@@ -1,0 +1,294 @@
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+    color:#333;
+    line-height:1.6;
+}
+
+/* ========== NAVBAR ========== */
+
+.navbar{
+    background:#15803d;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 8%;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.logo i{
+    font-size:30px;
+}
+
+.navbar ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+.navbar ul li a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.navbar ul li a:hover{
+    color:#d1fae5;
+}
+
+.logout-btn{
+    background:white;
+    color:#15803d;
+    border:none;
+    padding:10px 18px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.logout-btn:hover{
+    background:#dcfce7;
+}
+
+/* ========== HERO ========== */
+
+.hero{
+    background:linear-gradient(135deg,#16a34a,#22c55e);
+    color:white;
+    text-align:center;
+    padding:80px 20px;
+}
+
+.hero h1{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+    font-size:18px;
+}
+
+.join-btn{
+    margin-top:30px;
+    background:white;
+    color:#15803d;
+    border:none;
+    padding:14px 30px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.join-btn:hover{
+    transform:translateY(-3px);
+}
+
+
+
+/* Sections */
+.dashboard,
+.dashboard-section {
+  width: 100%;
+  padding: 60px 0;
+  background: #f5f7fb;
+}
+
+.dashboard h2,
+.dashboard-section h2 {
+  text-align: center;
+  color: #1f7f43;
+  font-size: 1.9rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+/* Cards */
+.card-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+}
+
+.card,
+.progress-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.card h1 {
+  font-size: 2rem;
+  color: #1f2937;
+}
+
+.card p {
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+.card i {
+  font-size: 2rem;
+  color: #1e8f3b;
+  margin-bottom: 12px;
+}
+
+/* Buttons */
+.action-btn {
+  margin-top: 14px;
+  background: #1e8f3b;
+  color: #fff;
+  padding: 11px 18px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.action-btn:hover {
+  background: #187233;
+}
+
+/* Progress */
+.progress-card {
+  width: 90%;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+progress {
+  width: 100%;
+  height: 16px;
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 14px 0;
+}
+
+progress::-webkit-progress-bar {
+  background: #e5e7eb;
+  border-radius: 999px;
+}
+
+progress::-webkit-progress-value {
+  background: #1e8f3b;
+  border-radius: 999px;
+}
+
+progress::-moz-progress-bar {
+  background: #1e8f3b;
+  border-radius: 999px;
+}
+
+/* Leaderboard */
+.leaderboard {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+}
+
+.leaderboard th,
+.leaderboard td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.leaderboard thead th {
+  background: #1e8f3b;
+  color: #fff;
+}
+
+/* Images */
+.progress-image{
+    height: 220px;
+    width: 220px;
+    object-fit: contain;
+    border-radius: 10px;
+    display:block;
+    margin: 0 auto;
+}
+
+.photos{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.photo-box{
+    width:260px;
+    background:white;
+    padding:15px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+footer {
+  background: #1e8f3b;
+  color: #fff;
+  text-align: center;
+  padding: 18px;
+  margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 16px;
+    gap: 14px;
+  }
+
+  .nav-links {
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
