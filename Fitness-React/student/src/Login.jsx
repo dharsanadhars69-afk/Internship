@@ -1,33 +1,54 @@
 import "./Login.css";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faUser,
+  faLock,
+  faDumbbell,
+  faFire,
+  faTrophy,
+  faHeart,
+  faEye,
+} from "@fortawesome/free-solid-svg-icons";
 
 function Login() {
   const navigate = useNavigate();
-  const login = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const login = (e) => {
+    e.preventDefault();
+
+    if (!email.trim()) {
+      setError("Please enter the email");
+      return;
+    }
+
+    if (!password.trim()) {
+      setError("Please enter the password");
+      return;
+    }
+
+    setError("");
     alert("Login Successful!");
     navigate("/home");
   };
 
-  const togglePassword = () => {
-    const password = document.getElementById("password");
-    password.type =
-      password.type === "password" ? "text" : "password";
-  };
-
   return (
     <div className="login-container">
-      {/* Left Side */}
       <div className="login-left">
         <div className="logo">
-          <i className="fas fa-dumbbell"></i>
+          <FontAwesomeIcon icon={faDumbbell} />
         </div>
 
         <h1>
           Fitness Challenge
-          <br/>
+          <br />
           Community
         </h1>
-          
 
         <p>
           Track your workouts, complete challenges,
@@ -36,54 +57,60 @@ function Login() {
 
         <div className="feature-list">
           <div className="feature">
-            <i className="fas fa-fire"></i>
+            <FontAwesomeIcon icon={faFire} />
             <span>Daily Streaks</span>
           </div>
 
           <div className="feature">
-            <i className="fas fa-trophy"></i>
+            <FontAwesomeIcon icon={faTrophy} />
             <span>Challenges</span>
           </div>
 
           <div className="feature">
-            <i className="fas fa-heart"></i>
+            <FontAwesomeIcon icon={faHeart} />
             <span>Healthy Lifestyle</span>
           </div>
         </div>
       </div>
 
-      {/* Right Side */}
       <div className="login-right">
-        <div className="login-box">
+        <form className="login-box" onSubmit={login}>
           <h2>Welcome Back</h2>
-
           <p>Login to continue your fitness journey.</p>
 
-          <div className="input-group">
-            <label>Email</label>
+          {error && <p className="error-msg">{error}</p>}
 
+          <div className="input-group">
+            <FontAwesomeIcon icon={faUser} />
+            <label htmlFor="email">Email</label>
             <input
+              id="email"
               type="email"
               placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
 
           <div className="input-group">
-            <label>Password</label>
+            <FontAwesomeIcon icon={faLock} />
+            <label htmlFor="password">Password</label>
 
             <div className="password-box">
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 id="password"
                 placeholder="Enter your password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
 
               <button
                 type="button"
                 className="eye-btn"
-                onClick={togglePassword}
+                onClick={() => setShowPassword(!showPassword)}
               >
-                <i className="fa-solid fa-eye"></i>
+                <FontAwesomeIcon icon={faEye} />
               </button>
             </div>
           </div>
@@ -95,15 +122,13 @@ function Login() {
             </label>
           </div>
 
-          <button
-            className="login-btn"
-            onClick={login}
-          >
+          <button type="submit" className="login-btn">
             Login
           </button>
-        </div>
+        </form>
       </div>
     </div>
   );
 }
+
 export default Login;

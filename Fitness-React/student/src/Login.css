@@ -16,20 +16,19 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    margin: 0;
+    padding:20px;
 }
 
 /* Login Container */
 
 .login-container{
     width:100%;
-    max-width:1100px;
-    min-height: 650;
+    max-width:1000px;
     display:flex;
-    background:#fff;
-    border-radius:18px;
+    background:#ffffff;
+    border-radius:15px;
     overflow:hidden;
-    box-shadow:0 15px 35px rgba(0,0,0,.3);
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
 }
 
 /* Left Side */
@@ -38,7 +37,7 @@ body{
     flex:1;
     background:#15803d;
     color:white;
-    padding:60px;
+    padding:50px;
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -53,20 +52,24 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    font-size:34px;
     margin-bottom:25px;
+    flex-shrink:0;
+}
+
+.logo svg{
+    width:34px;
+    height:34px;
+    color:#15803d;
 }
 
 .login-left h1{
-    font-size:48px;
-    margin:20px;
-    line-height: 1.1;
+    font-size:38px;
+    margin-bottom:15px;
 }
 
 .login-left p{
     line-height:1.7;
-    margin-bottom:40px;
-    font-size:20px;
+    margin-bottom:35px;
 }
 
 /* Features */
@@ -83,7 +86,7 @@ body{
     gap:15px;
 }
 
-.feature i{
+.feature svg{
     width:45px;
     height:45px;
     border-radius:50%;
@@ -96,12 +99,19 @@ body{
 
 /* Right Side */
 
+.error-msg{
+    color:red;
+    text-align:center;
+    margin-bottom:15px;
+    font-weight:bold;
+}
+
 .login-right{
     flex:1;
     display:flex;
     justify-content:center;
     align-items:center;
-    padding:50px;
+    padding:40px;
     background:#f8fafc;
 }
 
@@ -207,4 +217,3 @@ body{
 }
 
 }
-
